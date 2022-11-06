@@ -6,7 +6,7 @@ from send_mail import send_mail
 
 app = Flask(__name__)
 
-#load_dotenv()
+load_dotenv()
 
 ENV = 'PROD'
 
