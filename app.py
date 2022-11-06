@@ -15,7 +15,7 @@ if ENV == 'dev':
     app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{os.getenv("DEVICE_USERNAME")}:{os.getenv("DEVICE_PASSWORD")}@localhost/Lexus'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://${{ PGUSER }}:${{ PGPASSWORD }}@${{ PGHOST }}:${{ PGPORT }}/${{ PGDATABASE }}'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
