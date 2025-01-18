@@ -1,1 +1,21 @@
+# Python cache files
 __pycache__/
+*.pyc
+*.pyo
+
+# Ignore the .env file
+.env
+
+# Ignore virtual environment directory
+.venv/
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# Logs and temporary files
+*.log
+*.tmp
+.DS_Store

@@ -1,12 +1,17 @@
 import smtplib
+import os
+from dotenv import load_dotenv
 from email.mime.text import MIMEText
 
+# Load the .env file
+load_dotenv()
 
 def send_mail(customer, dealer, rating, comments):
-    port = 2525
-    smtp_server = 'smtp.mailtrap.io'
-    password='REDACTED'
-    password='REDACTED'
+    # Access environment variables
+    login = os.getenv('MAILTRAP_LOGIN')
+    password = os.getenv('MAILTRAP_PASSWORD')
+    smtp_server = os.getenv('SMTP_SERVER')
+    port = int(os.getenv('SMTP_PORT', 587))  # Default to 587 if not set
     message = f'<h3>New Feedback Submission</h3><ul><li>Customer: {customer}</li><li>Dealer: {dealer}</li><li>Rating: {rating}</li><li>Comments: {comments}</li></ul>'
 
     sender_email = 'email1@example.com'
